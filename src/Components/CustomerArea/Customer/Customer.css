@@ -1,0 +1,12 @@
+.logoStyle{
+    height:50px
+}
+.NavLinkStyle{
+    
+        font-weight: bold;
+        color: black
+    
+}
+.NavLinkStyle:hover{
+    color:salmon;
+}

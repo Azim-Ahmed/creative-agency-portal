@@ -1,0 +1,7 @@
+.servicesArea:hover{
+    box-shadow: 2px 2px 5px gray;
+    border-radius: 5px;
+    text-decoration: none;
+    transform: translateY(-3%);
+    transition: width 2s, height 2s, transform 2s;
+}

@@ -1,0 +1,24 @@
+
+
+.skewed-bg {
+  
+    background-color: #FBD062;
+    height: 100%;
+    width: 100%;
+    
+    padding: 1px;
+   
+    animation: skew 4s infinite;
+    transform: skew(2deg);
+    animation-direction: alternate;
+    
+  }
+  
+  @keyframes skew {
+    0% {
+      transform: skewX(2deg);
+    }
+    100% {
+      transform: skewX(-2deg);
+    }
+  }

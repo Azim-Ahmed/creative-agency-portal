@@ -1,0 +1,18 @@
+
+.inputForOrder{
+ width:30px;
+    height: 100px;
+}
+
+.logoStyle{
+    height:50px
+}
+.NavLinkStyle{
+    
+        font-weight: bold;
+        color: black
+    
+}
+.NavLinkStyle:hover{
+    color:salmon;
+}
