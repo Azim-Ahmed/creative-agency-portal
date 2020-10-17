@@ -14,13 +14,13 @@ const ServiceList = () => {
 
     const [services, setServices] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/serviceList?email=' + loggedInUser.email)
+        fetch('https://rocky-mesa-50833.herokuapp.com/serviceList?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => setServices(data))
     }, [services])
 
     const handleDeleteAdmin = (id) => {
-        fetch("http://localhost:5000/delete/?id=" + id, {
+        fetch("https://rocky-mesa-50833.herokuapp.com/delete/?id=" + id, {
             method: "DELETE",
         })
             .then(res => res.json())

@@ -38,7 +38,7 @@ console.log(matchedCourse);
 
     const handleAll = () => {
 
-        fetch('http://localhost:5000/customerOrder',
+        fetch('https://rocky-mesa-50833.herokuapp.com/customerOrder',
             {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },

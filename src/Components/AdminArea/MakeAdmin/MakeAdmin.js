@@ -27,7 +27,7 @@ const MakeAdmin = () => {
     const handleAll = () => {
 
 
-        fetch('http://localhost:5000/addadmin',
+        fetch('https://rocky-mesa-50833.herokuapp.com/addadmin',
             {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },
@@ -35,7 +35,7 @@ const MakeAdmin = () => {
             }
         )
             .then(result => {
-                alert("Event Added for Volunteering")
+                alert("New Admin Added to this Website")
             })
     }
     return (

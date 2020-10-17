@@ -5,7 +5,7 @@ const ClientsFeedback = () => {
 
    const [feedbackData ,setFeedbackData] = useState([])
    useEffect(() => {
-    fetch('http://localhost:5000/reviewlist')
+    fetch('https://rocky-mesa-50833.herokuapp.com/reviewlist')
     .then(res=>res.json())
     .then(data =>setFeedbackData(data))
    },[])

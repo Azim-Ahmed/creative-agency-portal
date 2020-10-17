@@ -20,7 +20,7 @@ const AddEvent = () => {
         formData.append('description', service.description)
         formData.append('serviceTitle', service.serviceTitle)
 
-        fetch('http://localhost:5000/addevent', {
+        fetch('https://rocky-mesa-50833.herokuapp.com/addevent', {
             method: 'POST',
             body: formData
         })

@@ -26,7 +26,7 @@ const Login = () => {
   //   const [ data, setData ] = useState([])
   //   useEffect(()=> {
 
-  //     fetch('http://localhost:5000/getadmin?email=' + loggedInUser.email )
+  //     fetch('https://rocky-mesa-50833.herokuapp.com/getadmin?email=' + loggedInUser.email )
   //     .then(res => res.json())
   //     .then(date => setData(date))
 
@@ -40,7 +40,7 @@ const Login = () => {
       const loggedInUse = { name: displayName, email,photo:photoURL }
 
 
-      fetch('http://localhost:5000/getadmin?email=' + loggedInUse.email )
+      fetch('https://rocky-mesa-50833.herokuapp.com/getadmin?email=' + loggedInUse.email )
      .then(res => res.json())
       .then(data => {
         if (data.length == 0) {

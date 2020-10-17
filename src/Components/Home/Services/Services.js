@@ -13,7 +13,7 @@ const Services = () => {
     const [admin, setAdmin] = useState()
 
     useEffect(() => {
-        fetch('http://localhost:5000/getadmin?email=' + loggedInUser.email )
+        fetch('https://rocky-mesa-50833.herokuapp.com/getadmin?email=' + loggedInUser.email )
             .then(res => res.json())
             .then(result => {
                 console.log(result);
@@ -27,7 +27,7 @@ const Services = () => {
     }, [])
 
    useEffect(()=>{
-    fetch('http://localhost:5000/frontcourse')
+    fetch('https://rocky-mesa-50833.herokuapp.com/frontcourse')
     .then(res=> res.json())
     .then(data => setServicesData(data))
    },[servicesData])

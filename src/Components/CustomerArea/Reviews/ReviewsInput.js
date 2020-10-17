@@ -29,7 +29,7 @@ const ReviewsInput = () => {
     const handleAll = () => {
 
 
-        fetch('http://localhost:5000/feedback',
+        fetch('https://rocky-mesa-50833.herokuapp.com/feedback',
             {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },
