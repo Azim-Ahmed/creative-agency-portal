@@ -29,6 +29,7 @@ const NavArea = () => {
             <NavItem>
               <NavLink className="mr-3" href="/#contact">Contact Us</NavLink>
             </NavItem>
+           
             <NavItem>
            {
              loggedInUser.email? <h5>{loggedInUser.name}</h5> :  <Button  outline color = "danger" className="text-center">  <NavLink className="mr-3" href="/login"> Login </NavLink></Button>

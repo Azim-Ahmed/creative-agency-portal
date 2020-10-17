@@ -1,22 +1,36 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Button, Card, CardBody, CardImg, CardText, CardTitle, Container } from 'reactstrap';
-import {  UserContext } from '../../../App';
+import { UserContext } from '../../../App';
+import Spinners from '../../Spinners/Spinners';
 
 
 
 const ServiceList = () => {
-    
+
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     // const [servicesData, setServicesData] = useContext(ServiceContext)
 
 
     const [services, setServices] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/serviceList?email='+loggedInUser.email)
+        fetch('http://localhost:5000/serviceList?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => setServices(data))
-    }, [])
+    }, [services])
+
+    const handleDeleteAdmin = (id) => {
+        fetch("http://localhost:5000/delete/?id=" + id, {
+            method: "DELETE",
+        })
+            .then(res => res.json())
+            .then(result => {
+                if (result) {
+                    console.log(result);
+
+                }
+            })
+    }
 
     return (
         <Container>
@@ -27,7 +41,7 @@ const ServiceList = () => {
                     alt=""
                 /></Link></p>
                 <p>Customer</p>
-    <p>{loggedInUser.name}</p>
+                <p>{loggedInUser.name}</p>
             </div>
             <div className="row">
                 <div className="col-md-3">
@@ -56,28 +70,29 @@ const ServiceList = () => {
 
                 </div>
                 <div className="col-md-8 w-75">
-                   
-<div className="row">
-{
-    services.map((list,i)=> 
-         
-     <div key={i} className="col-md-4">
-          <Card>
-     <CardImg top  width="100%" src={list.photo} alt="Card image cap" />
-     <CardBody>
-       <CardTitle>{list.course}</CardTitle>
-    <CardText> <small>{list.description}</small> </CardText>
-     
-       <Button color="info">Cancel</Button>
-     </CardBody>
-   </Card>
 
-      </div>
-   
-    )
-}
-</div>
-                    
+                    <div className="row">
+                        {
+                            services.length ? services.map((list, i) =>
+
+                                <div key={i} className="col-md-4">
+                                    <Card>
+                                        <CardImg top style={{ height: "150px" }} width="100%" src={`data:image/png;base64,${list.photo.img}`} alt="Card image cap" />
+                                        <CardBody>
+                                            <CardTitle>{list.course}</CardTitle>
+                                            <CardText> <small>{list.description}</small> </CardText>
+
+                                            <Button onClick={() => handleDeleteAdmin(list._id)} color="info">Cancel</Button>
+                                        </CardBody>
+                                    </Card>
+
+                                </div>
+                            )
+                                : <Spinners />
+
+                        }
+                    </div>
+
 
 
 

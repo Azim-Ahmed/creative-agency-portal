@@ -1,4 +1,17 @@
 
+.skewed-bg {
+  
+  
+  background: #FBD062;
+  clip-path: polygon(0 0, 100% 0, 100% 87%, 0% 100%);
+  padding:30px;
+
+  
+}
+
+
+
+
 
 .skewed-bg {
   
@@ -16,9 +29,9 @@
   
   @keyframes skew {
     0% {
-      transform: skewX(2deg);
+      transform: skewX(1deg);
     }
     100% {
-      transform: skewX(-2deg);
+      transform: skewX(-1deg);
     }
   }

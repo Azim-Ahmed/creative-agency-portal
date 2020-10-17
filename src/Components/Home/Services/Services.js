@@ -1,17 +1,34 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ServiceContext } from '../../../App';
+import { ServiceContext, UserContext } from '../../../App';
+import Spinners from '../../Spinners/Spinners';
+
 
 import './Services.css'
 
 const Services = () => {
     const [servicesData, setServicesData] = useContext(ServiceContext)
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
 
-    
+    const [admin, setAdmin] = useState()
+
+    useEffect(() => {
+        fetch('http://localhost:5000/getadmin?email=' + loggedInUser.email )
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+                if (result.length == 0) {
+                    setAdmin(false)
+                }
+                else {
+                    setAdmin(true)
+                }
+            })
+    }, [])
 
    useEffect(()=>{
     fetch('http://localhost:5000/frontcourse')
-    .then(response => response.json())
+    .then(res=> res.json())
     .then(data => setServicesData(data))
    },[servicesData])
 
@@ -24,18 +41,32 @@ const Services = () => {
                 <h2>Provide awsome <span style={{ color: 'green' }}>services</span></h2>
             </div>
 
-          <div className = "d-flex justify-content-center">
-          <div className='row w-75 mt-5 pt-5'>
+          <div className = "d-flex  justify-content-center">
+          <div className='row w-75 mt-5 pt-5 '>
                 {
-                    servicesData.map((service, i) =>
+                  servicesData.length ?  servicesData.map((service, i) =>
                         
-                        <Link to =  {`/order/${service.id}`} key = {i} className='servicesArea col-md-4 text-center'>
-                            <img className = 'mb-3 mt-3' style ={{height:"70px"}} src={service.img} alt="" />
+                        <>
+                            { 
+                            !admin && <Link to =  {`/order/${service._id}`} key = {i} className='servicesArea col-md-6 col-sm-12 col-lg-4 text-center'>
+                            
+                            <img className = 'mb-3 mt-3' style ={{height:"70px"}}  src={`data:image/png;base64,${service.img.img}`}alt="" />
                             <h5>{service.name}</h5>
                 <p className = "text-secondary">{service.desc}</p>
                 </Link>
+                            }
+                            {
+                                admin && <div className='servicesArea col-md-6 col-sm-12 col-lg-4 text-center'>
+                            
+                                <img className = 'mb-3 mt-3' style ={{height:"70px"}}  src={`data:image/png;base64,${service.img.img}`}alt="" />
+                                <h5>{service.name}</h5>
+                    <p className = "text-secondary">{service.desc}</p>
+                    </div>
+                            }
+                        </>
                         
                     )
+                    : <Spinners className="text-center"/>
                 }
             </div>
           </div>

@@ -11,16 +11,16 @@ const Order = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
     const [servicesData, setServicesData] = useContext(ServiceContext)
 
-const {id} = useParams()
+const {_id} = useParams()
 
-const matchedCourse = servicesData.find(course => parseInt(course.id) === parseInt(id))
+const matchedCourse = servicesData.find(course => course._id === _id)
 console.log(matchedCourse);
 
     const [newCustomer, setNewCustomer] = useState({
         name:loggedInUser.name,
         email:loggedInUser.email,
        course : matchedCourse.name,
-    photo: matchedCourse.img,
+       photo: matchedCourse.img,
     description:matchedCourse.desc
 
     })
@@ -29,7 +29,7 @@ console.log(matchedCourse);
         category[e.target.name] = e.target.value;
 
         setNewCustomer(category);
-        console.log(category, newCustomer);
+        console.log( newCustomer);
 
     }
 
@@ -46,7 +46,7 @@ console.log(matchedCourse);
             }
         )
             .then(result => {
-                alert("Event Added for Volunteering")
+                alert("Course Added To Your List")
             })
     }
     return (
@@ -63,7 +63,7 @@ console.log(matchedCourse);
             <div className="row">
                 <div className="col-md-3">
                 <div>
-                    <Link className="NavLinkStyle" to={`/order/${id}`} ><p className="    mb-3"  >
+                    <Link className="NavLinkStyle" to={`/order/${_id}`} ><p className="    mb-3"  >
                         <i className="fas fa-cart-plus mr-2"></i>
                         Order </p>
                     </Link>
@@ -148,7 +148,7 @@ console.log(matchedCourse);
 
 
 
-                <Link to='/servicelist'><Button onClick={handleAll} type="submit" size='md' color="warning">Registration</Button></Link>
+                <Link to='/servicelist'><Button onClick={handleAll} type="submit" size='md' color="warning">Order</Button></Link>
             </Form>
 
                     </div>

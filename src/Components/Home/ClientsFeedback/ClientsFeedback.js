@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Spinners from '../../Spinners/Spinners';
 
 const ClientsFeedback = () => {
 
@@ -19,7 +20,7 @@ const ClientsFeedback = () => {
             <div className="d-flex justify-content-center">
                 <div className='row w-75 mt-5 py-3'>
                     {
-                        feedbackData.map((review, i) =>
+                      feedbackData.length ?  feedbackData.map((review, i) =>
                             <div key={i} className='servicesArea col-md-4 text-center'>
                                 <div className="d-flex pt-3">
                                     <div>
@@ -33,6 +34,7 @@ const ClientsFeedback = () => {
                                 <p className="text-secondary">{review.description}</p>
                             </div>
                         )
+                        :  <Spinners></Spinners>
                     }
                 </div>
             </div>

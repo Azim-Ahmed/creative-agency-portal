@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
-import { Link, NavLink, useParams } from 'react-router-dom';
+import { Link, NavLink, } from 'react-router-dom';
 
-import { Form, FormGroup,Input, Container } from 'reactstrap';
+import { Form, FormGroup, Input, Container } from 'reactstrap';
 import { Button } from 'reactstrap';
 import { UserContext } from '../../../App';
 
@@ -10,32 +10,28 @@ import { UserContext } from '../../../App';
 
 
 const MakeAdmin = () => {
-    const {id} = useParams()
+
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
 
-    const [newReview, setNewReview] = useState({
-        img: loggedInUser.photo
-    })
+    const [newAdmin, setNewAdmin] = useState({})
     const handleInput = (e) => {
-        const category = { ...newReview }
+        const category = { ...newAdmin }
         category[e.target.name] = e.target.value;
 
-        setNewReview(category);
-        console.log(category, newReview);
+        setNewAdmin(category);
+        console.log(category, newAdmin);
 
     }
-
-    
 
 
     const handleAll = () => {
 
 
-        fetch('http://localhost:5000/feedback',
+        fetch('http://localhost:5000/addadmin',
             {
                 method: 'POST',
                 headers: { 'content-type': 'application/json' },
-                body: JSON.stringify(newReview)
+                body: JSON.stringify(newAdmin)
             }
         )
             .then(result => {
@@ -44,14 +40,14 @@ const MakeAdmin = () => {
     }
     return (
         <Container>
-             <div className="d-flex justify-content-between">
+            <div className="d-flex justify-content-between">
                 <p><Link to="/"><img
                     className="logoStyle"
                     src="https://i.ibb.co/kmzR5Ly/logo.png"
                     alt=""
                 /></Link></p>
                 <p>Customer</p>
-    <p>{loggedInUser.name}</p>
+                <p>{loggedInUser.name}</p>
             </div>
             <div className="row">
                 <div className="col-md-3">
@@ -80,23 +76,23 @@ const MakeAdmin = () => {
 
                 </div>
                 <div className="col-md-8 w-75">
-                <div>
-                        
+                    <div>
+
                         <Form className="w-75 justify-content-start">
-                    <FormGroup>
-    
-                        
-                        <Input
-                            type="email"
-                            name="name"
-                            onBlur={handleInput}
-                            placeholder="Enter Email Address to Make Admin"
-                        />
-                    </FormGroup>
-                    <Link to='/'><Button onClick={handleAll} type="submit" size='md' color="warning">Add Event</Button></Link>
-                </Form>
-    
-                        </div>
+                            <FormGroup>
+
+
+                                <Input
+                                    type="email"
+                                    name="name"
+                                    onBlur={handleInput}
+                                    placeholder="Enter Email Address to Make Admin"
+                                />
+                            </FormGroup>
+                            <Link to='/'><Button onClick={handleAll} type="submit" size='md' color="warning">Add admin</Button></Link>
+                        </Form>
+
+                    </div>
                 </div>
             </div>
 

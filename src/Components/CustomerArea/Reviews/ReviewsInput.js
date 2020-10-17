@@ -1,14 +1,14 @@
 import React, { useContext, useState } from 'react';
-import { Link, NavLink, useParams } from 'react-router-dom';
+import { Link, NavLink,} from 'react-router-dom';
 
-import { Form, FormGroup,Input, Container } from 'reactstrap';
+import { Form, FormGroup, Input, Container } from 'reactstrap';
 import { Button } from 'reactstrap';
 import { UserContext } from '../../../App';
 
 
 
 const ReviewsInput = () => {
-    const {id} = useParams()
+
     const [loggedInUser, setLoggedInUser] = useContext(UserContext)
 
     const [newReview, setNewReview] = useState({
@@ -23,7 +23,7 @@ const ReviewsInput = () => {
 
     }
 
-    
+
 
 
     const handleAll = () => {
@@ -43,8 +43,8 @@ const ReviewsInput = () => {
     return (
         <Container>
             <div className="d-flex justify-content-between">
-            <p><Link to = "/"><img
-                    className="logoStyle" 
+                <p><Link to="/"><img
+                    className="logoStyle"
                     src="https://i.ibb.co/kmzR5Ly/logo.png"
                     alt=""
                 /></Link></p>
@@ -53,75 +53,75 @@ const ReviewsInput = () => {
             </div>
             <div className="row">
                 <div className="col-md-3">
-                <div>
-                <Link className="NavLinkStyle" to={`/order/${parseInt(id)}`} ><p className="    mb-3"  >
-                        <i className="fas fa-cart-plus"></i>
+                    <div>
+                        <Link className="NavLinkStyle" to="/" ><p className="    mb-3"  >
+                            <i className="fas fa-cart-plus"></i>
                         Order </p>
-                    </Link>
-                </div>
-                <div>
-                    <NavLink className="NavLinkStyle" to="/servicelist" >
-                        <p className="   ">
-                            <i className="fas fa-list-ul"></i>
+                        </Link>
+                    </div>
+                    <div>
+                        <NavLink className="NavLinkStyle" to="/servicelist" >
+                            <p className="   ">
+                                <i className="fas fa-list-ul"></i>
                                     Service List
                                 </p>
-                    </NavLink>
-                </div>
-                <div>
-                    <NavLink className="NavLinkStyle" to="/review" >
-                        <p className="   ">
-                            <i className="fal fa-comment-alt-check"></i>
+                        </NavLink>
+                    </div>
+                    <div>
+                        <NavLink className="NavLinkStyle" to="/review" >
+                            <p className="   ">
+                                <i className="fal fa-comment-alt-check"></i>
                                     Review
                                 </p>
-                    </NavLink>
-                </div>
+                        </NavLink>
+                    </div>
 
                 </div>
                 <div className="col-md-8 w-75">
-                <div>
-                        
+                    <div>
+
                         <Form className="w-75 justify-content-start">
-                    <FormGroup>
-    
-                        
-                        <Input
-                            type="text"
-                            name="name"
-                            className="inputForOrder"
-                            onBlur={handleInput}
-                            placeholder="Your Name"
-                        />
-                    </FormGroup>
-                    <FormGroup>
-    
-                        
-                        <Input
-                            type="text"
-                            name="company"
-                            className="inputForOrder"
-                            onBlur={handleInput}
-                            placeholder= "Company Name/designation"
-                        />
-                    </FormGroup>
-                    <FormGroup>
-    
-                        
-                        <Input
-                            type="text"
-                            name="description"
-                            className="input-element"
-                            onBlur={handleInput}
-                            placeholder= "Give Enthusiast Review"
-                        />
-                    </FormGroup>
-                   
-    
-    
-    
-                    <Link to='/'><Button onClick={handleAll} type="submit" size='md' color="warning">Feedback</Button></Link>
-                </Form>
-    
-                        </div>
+                            <FormGroup>
+
+
+                                <Input
+                                    type="text"
+                                    name="name"
+                                    className="inputForOrder"
+                                    onBlur={handleInput}
+                                    placeholder="Your Name"
+                                />
+                            </FormGroup>
+                            <FormGroup>
+
+
+                                <Input
+                                    type="text"
+                                    name="company"
+                                    className="inputForOrder"
+                                    onBlur={handleInput}
+                                    placeholder="Company Name/designation"
+                                />
+                            </FormGroup>
+                            <FormGroup>
+
+
+                                <Input
+                                    type="text"
+                                    name="description"
+                                    className="input-element"
+                                    onBlur={handleInput}
+                                    placeholder="Give Enthusiast Review"
+                                />
+                            </FormGroup>
+
+
+
+
+                            <Link to='/'><Button onClick={handleAll} type="submit" size='md' color="warning">Feedback</Button></Link>
+                        </Form>
+
+                    </div>
                 </div>
             </div>
 
