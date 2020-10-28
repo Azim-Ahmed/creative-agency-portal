@@ -5,8 +5,18 @@
 ## Server site Repository [Creative-Agency-Server](https://github.com/Azim-Ahmed/creative-agency-server)
 ### Back to [Resume](https://drive.google.com/file/d/1J1O8AZANjsDNsrOgfZI-azmHBingnUAT/view?usp=sharing)
 
-- A Full Stack (MERN stack) Project.
-- A volunteer organization page that offers a lot of volunteer services.
-- Anybody can select a service and can register as a volunteer by login via private route.
-- He or she can see all their services and date.
-- Here is also admin panel can see all registered volunteer services.
+- A website for those who want to handle their project smoothly.
+- By selecting a specific service ,it’s redirect to login form and  it shows a booking form for booking  a service . If particular person wants to cancel booking he/she can cancel service.
+- It has a specific admin panel only admin can access it.
+
+I used these material to build this website: 
+- HTML
+- CSS
+- REACTSTRAP 
+- JAVASCRIPT 
+- REACT Js
+- FIREBASE 
+- HEROKU 
+- NODEJS 
+- EXPRESS.JS 
+- MONGODB.
