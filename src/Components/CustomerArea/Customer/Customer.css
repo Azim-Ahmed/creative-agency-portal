@@ -1,12 +1,10 @@
-.logoStyle{
-    height:50px
+.logoStyle {
+  height: 5rem;
 }
-.NavLinkStyle{
-    
-        font-weight: bold;
-        color: black
-    
+.NavLinkStyle {
+  font-weight: bold;
+  color: black;
 }
-.NavLinkStyle:hover{
-    color:salmon;
+.NavLinkStyle:hover {
+  color: salmon;
 }

@@ -1,37 +1,9 @@
-
 .skewed-bg {
-  
-  
-  background: #FBD062;
+  background: #fbd062;
   clip-path: polygon(0 0, 100% 0, 100% 87%, 0% 100%);
-  padding:30px;
-
-  
+  padding: 30px;
 }
 
-
-
-
-
-.skewed-bg {
-  
-    background-color: #FBD062;
-    height: 100%;
-    width: 100%;
-    
-    padding: 1px;
-   
-    animation: skew 4s infinite;
-    transform: skew(2deg);
-    animation-direction: alternate;
-    
-  }
-  
-  @keyframes skew {
-    0% {
-      transform: skewX(1deg);
-    }
-    100% {
-      transform: skewX(-1deg);
-    }
-  }
+a {
+  text-decoration: none !important;
+}

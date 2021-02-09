@@ -9,8 +9,8 @@ const Header = () => {
     return (
       <section className="skewed-bg" >
             <Container>
-             <NavArea></NavArea>
-            <HeaderMaain/>
+             <NavArea />
+            <HeaderMaain />
         </Container>
       </section>
     );
