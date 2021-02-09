@@ -1,15 +1,8 @@
-.SignIn-Header img{
-height: 100px;
-margin-top: 50px;
-}
-.btn-style{
-color: green;
-width:100%;
-border-radius:10px;
-}
-.SignIn-body{
-    background-color: rgb(240, 230, 230);
-    border:1px solid black;
-
+.login_image_size {
+  height: 6rem;
 }
 
+.login_section_background {
+  padding: 5rem;
+  box-shadow: 1px 1px 8px gray;
+}

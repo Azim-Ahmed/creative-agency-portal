@@ -6,29 +6,28 @@ import RingLoader from "react-spinners/RingLoader";
 const override = css`
   display: block;
   margin: 0 auto;
-align-items: center;
   border-color: yellow;
 `;
 
 class Spinners extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            loading: true
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: true,
+    };
+  }
 
-    render() {
-        return (
-            <div className="sweet-loading">
-                <RingLoader
-                    css={override}
-                    size={150}
-                    color={"#123abc"}
-                    loading={this.state.loading}
-                />
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="sweet-loading text-center">
+        <RingLoader
+          css={override}
+          size={150}
+          color={"#123abc"}
+          loading={this.state.loading}
+        />
+      </div>
+    );
+  }
 }
 export default Spinners;
