@@ -1,18 +1,15 @@
-
-.inputForOrder{
- width:30px;
-    height: 100px;
+.logoStyle {
+  height: 40px;
 }
-
-.logoStyle{
-    height:50px
+.NavLinkStyle {
+  font-weight: bold;
+  color: black;
 }
-.NavLinkStyle{
-    
-        font-weight: bold;
-        color: black
-    
+.NavLinkStyle:hover {
+  color: salmon;
 }
-.NavLinkStyle:hover{
-    color:salmon;
+.NavLink_section {
+  background-color: rgb(221, 208, 208);
+  padding: 0.4rem;
+  box-shadow: 1px 1px 3px gray;
 }

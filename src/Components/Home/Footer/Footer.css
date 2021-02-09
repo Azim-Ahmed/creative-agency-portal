@@ -1,7 +1,7 @@
-.input-element{
-    height: 300px !important;
-    width: 400px;
-    }
-    .FooterArea{
-        background-color: #FBD062;
-    }
+.input-element {
+  height: 300px !important;
+  width: 100%;
+}
+.FooterArea {
+  background-color: #fbd062;
+}
