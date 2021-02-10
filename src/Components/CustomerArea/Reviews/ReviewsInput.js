@@ -16,7 +16,6 @@ const ReviewsInput = () => {
     category[e.target.name] = e.target.value;
 
     setNewReview(category);
-    console.log(category, newReview);
   };
 
   const handleAll = () => {
@@ -30,7 +29,7 @@ const ReviewsInput = () => {
   };
   return (
     <Container>
-      <div className="d-flex justify-content-between">
+      <div className="d-flex my-3 NavLink_section justify-content-between">
         <p>
           <Link to="/">
             <img
@@ -70,9 +69,9 @@ const ReviewsInput = () => {
             </NavLink>
           </div>
         </div>
-        <div className="col-md-8 w-75">
+        <div className="col-md-8 col-sm-12 col-xs-12">
           <div>
-            <Form className="w-75 justify-content-start">
+            <Form className="sm-offset-2 order_background justify-content-start">
               <FormGroup>
                 <Input
                   type="text"

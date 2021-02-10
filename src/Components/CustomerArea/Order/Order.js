@@ -12,7 +12,6 @@ const Order = () => {
   const { _id } = useParams();
 
   const matchedCourse = servicesData.find((course) => course._id === _id);
-  console.log(matchedCourse);
 
   const [newCustomer, setNewCustomer] = useState({
     name: loggedInUser.name,
@@ -26,7 +25,6 @@ const Order = () => {
     category[e.target.name] = e.target.value;
 
     setNewCustomer(category);
-    console.log(newCustomer);
   };
 
   const handleAll = () => {
@@ -55,7 +53,7 @@ const Order = () => {
         <p>{loggedInUser.name}</p>
       </div>
       <div className="row">
-        <div className="col-md-3">
+        <div className="col-md-3 col-sm-12 col-xs-12">
           <div>
             <Link className="NavLinkStyle" to={`/order/${_id}`}>
               <p className="    mb-3">
@@ -81,8 +79,8 @@ const Order = () => {
             </NavLink>
           </div>
         </div>
-        <div className="col-md-8 sm-offset-3 w-75">
-          <Form className="w-75 justify-content-start">
+        <div className="col-md-8 col-sm-12 md-offset-2">
+          <Form className=" order_background">
             <FormGroup>
               <Input
                 type="text"

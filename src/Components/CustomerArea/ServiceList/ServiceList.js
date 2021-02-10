@@ -14,7 +14,6 @@ import Spinners from "../../Spinners/Spinners";
 
 const ServiceList = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-  // const [servicesData, setServicesData] = useContext(ServiceContext)
 
   const [services, setServices] = useState([]);
   useEffect(() => {
@@ -24,9 +23,9 @@ const ServiceList = () => {
     )
       .then((res) => res.json())
       .then((data) => setServices(data));
-  }, [services]);
+  }, [services, loggedInUser.email]);
 
-  const handleDeleteAdmin = (id) => {
+  const handleDelete = (id) => {
     fetch("https://rocky-mesa-50833.herokuapp.com/delete/?id=" + id, {
       method: "DELETE",
     })
@@ -40,7 +39,7 @@ const ServiceList = () => {
 
   return (
     <Container>
-      <div className="d-flex justify-content-between">
+      <div className="d-flex NavLink_section my-3 justify-content-between">
         <p>
           <Link to="/">
             <img
@@ -80,11 +79,14 @@ const ServiceList = () => {
             </NavLink>
           </div>
         </div>
-        <div className="col-md-8 sm-offset-3 w-75">
+        <div className="col-md-8 sm-offset-2">
           <div className="row">
             {services.length ? (
               services.map((list, i) => (
-                <div key={i} className="col-md-4">
+                <div
+                  key={i}
+                  className="col-md-6 col-lg-4 sm-offset-2 col-sm-12"
+                >
                   <Card>
                     <CardImg
                       top
@@ -101,7 +103,7 @@ const ServiceList = () => {
                       </CardText>
 
                       <Button
-                        onClick={() => handleDeleteAdmin(list._id)}
+                        onClick={() => handleDelete(list._id)}
                         color="info"
                       >
                         Cancel

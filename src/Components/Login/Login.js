@@ -35,7 +35,6 @@ const Login = () => {
           .then((res) => res.json())
           .then((data) => {
             if (data.length == 0) {
-              console.log(data.length);
               setLoggedInUser(loggedInUse);
               history.replace(from);
             } else {
@@ -59,7 +58,7 @@ const Login = () => {
         <Col className="mb-3" md={{ size: 6, offset: 3 }} sm={{ size: 12 }}>
           <Link to="/">
             <img
-              className="my-5 mx-3 login_image_size"
+              className="my-5 login_image_size"
               src="https://i.ibb.co/kmzR5Ly/logo.png"
               alt="logo"
             />
