@@ -85,13 +85,12 @@ const ServiceList = () => {
               services.map((list, i) => (
                 <div
                   key={i}
-                  className="col-md-6 col-lg-4 sm-offset-2 col-sm-12"
+                  className="col-md-6 col-lg-4 sm-offset-2 my-3 col-sm-12"
                 >
                   <Card>
                     <CardImg
                       top
-                      style={{ height: "150px" }}
-                      width="100%"
+                      className="ServiceList_Image_size"
                       src={`data:image/png;base64,${list.photo.img}`}
                       alt="Card image cap"
                     />

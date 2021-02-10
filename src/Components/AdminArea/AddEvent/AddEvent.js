@@ -30,7 +30,7 @@ const AddEvent = () => {
 
   return (
     <Container>
-      <div className="d-flex justify-content-between">
+      <div className="d-flex my-3 NavLink_section justify-content-between">
         <p>
           <Link to="/">
             <img

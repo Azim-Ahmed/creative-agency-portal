@@ -8,3 +8,9 @@
 .NavLinkStyle:hover {
   color: salmon;
 }
+
+.ServiceList_Image_size {
+  height: "14rem";
+  padding: "1.3rem";
+  box-shadow: 1px 1px 5px gray;
+}
