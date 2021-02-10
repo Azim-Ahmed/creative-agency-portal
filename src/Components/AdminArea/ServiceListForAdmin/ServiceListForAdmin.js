@@ -45,7 +45,7 @@ const ServiceList = () => {
         <div className="col-md-3">
           <div>
             <Link className="NavLinkStyle" to="/servicelistforadmin">
-              <p className="    mb-3">
+              <p className="mb-3">
                 <i className="fas fa-cart-plus mr-2"></i>
                 Service List{" "}
               </p>
@@ -53,7 +53,7 @@ const ServiceList = () => {
           </div>
           <div>
             <NavLink className="NavLinkStyle" to="/addevent">
-              <p className="   ">
+              <p>
                 <i className="fas fa-plus mr-2"></i>
                 Add service
               </p>
@@ -61,7 +61,7 @@ const ServiceList = () => {
           </div>
           <div>
             <NavLink className="NavLinkStyle" to="/makeadmin">
-              <p className="   ">
+              <p>
                 <i className=" fal fa-user mr-2"></i>
                 Make admin
               </p>
